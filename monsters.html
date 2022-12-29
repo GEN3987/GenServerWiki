@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>GenServer公式wiki|Monsters</title>
+    <meta name="description" content="GenServerRPGのwikiです。ネタバレ注意">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta property="og:title" content="GenServer公式wiki|Monsters">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="GenServerRPGのwikiです。ネタバレ注意">
+    <meta property="og:url" content="https://www.genserver.work/wiki/monsters.html">
+    <meta property="og:site_name" content="GenServer公式wiki">
+    <meta property="og:image" content="https://www.genserver.work/wiki/assets/images/icon.png">
+    <meta property="og:locale" content="ja_JP">
+    <meta name='twitter:card' content='summary_large_image'>
+
+    <link rel="shortcut icon" href="./assets/images/icon.png">
+    <link rel="stylesheet" href="./assets/stylesheets/style.css">
+    <link rel="stylesheet" href="./assets/stylesheets/util.css">
+    <meta charset="utf-8">
+    <meta name="author" content="Rinrin.rs">
+    <meta name="copyright" content="© 2020 - 2022 Rinrin.rs">
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/scripts/script.js"></script>
+    <style>
+        section {
+            border: black solid 3px;
+            margin: 3px 30px;
+            padding: 20px;
+        }
+
+        .section_odd {
+            background-color: #faffe8;
+        }
+
+        .section_eve {
+            background-color: #f3e8ff;
+        }
+
+        .section_boss {
+            color: white;
+            background-image: url(./assets/images/boss_back.png);
+        }
+
+        section h3 {
+            width: 50%;
+            font-size: 30px;
+            border-bottom: black solid 5px;
+        }
+
+        .monster_list {
+            padding: 10px;
+            text-align: center;
+            margin: 10px 170px;
+            border: black solid 5px;
+        }
+
+        .monster_list .dungeon {
+            border-radius: 100em;
+            font-weight: 900;
+            margin: 8px;
+            border: black solid 5px;
+            font-size: 30px;
+            padding: 5px;
+            background-color: #85ffae;
+        }
+
+        .list-boss {
+            color: #3a000c;
+            font-weight: 600;
+        }
+
+        .monster_list li {
+            border: black solid 1px;
+            font-size: 30px;
+            padding: 3px;
+            background-color: #c3ffd7;
+            transition: 0.2s;
+        }
+
+        .monster_list li:hover {
+            background-color: white;
+        }
+
+        .boss_name {
+            position: relative;
+            padding: 2px 48px;
+            border-bottom: 3px solid #ffefbc;
+            font-weight: lighter;
+            color: #ffbebe;
+            font-weight: 900;
+        }
+
+        .boss_name:before,
+        .boss_name:after {
+            content: "";
+            display: block;
+            position: absolute;
+        }
+
+        .boss_name:before {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 3px solid #bcfff6;
+            bottom: -20px;
+            left: 6px;
+        }
+
+        .boss_name:after {
+            height: 64px;
+            border-left: 3px solid #ffefbc;
+            bottom: -32px;
+            left: 24px;
+        }
+
+        .boss_desc {
+            border-radius: 5px;
+            font-size: 23px;
+            font-weight: 500;
+            display: inline-block;
+            padding: 6px;
+            background-color: #051443;
+            border: 2px dashed #9ffcff;
+            box-shadow: 0 0 0 4px #051443;
+            margin: 6px 0;
+        }
+
+        .boss_desc .creator {
+            color: #ffc1ff !important;
+        }
+
+        section .desc {
+            border: #27004b double 2px;
+            border-radius: 5px;
+            background-color: #cfcfcf;
+            font-size: 23px;
+            font-weight: 500;
+            display: inline-block;
+            padding: 5px;
+        }
+
+        section .ecology {
+            display: inline-block;
+            font-size: 28px;
+            font-weight: 500;
+        }
+
+        section .monster_img {
+            height: 300px;
+            display: inline-block;
+        }
+
+        section .creator {
+            color: #00266d;
+            font-weight: 550;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img src="./assets/images/icon.png"></a>
+        <ul>
+            <a href="https://discord.gg/ZpN7DuRAUD">
+                <li>
+                    <h2>Join the GenServer Discord</h2>
+                </li>
+            </a>
+        </ul>
+    </header>
+    <h1>モンスター一覧</h1><br>
+    <h2 class="spoiler-alert">
+        ※このサイトにはGenServerRPG(TwilightStarRPG)のネタバレが多く含まれています。
+        重大なネタバレは伏せていますが、閲覧する場合は自己責任でお願いします。
+        また、Rinrinが一人で書いたものなので一部情報が間違っている可能性があります。
+        もし誤まった情報がありましたら
+        <a href="https://twitter.com/Rinrin_2nd" class="fooder-twitter"
+            style="text-decoration:underline;;color: #598eff;">Twitter</a>
+        もしくは
+        <a href="https://discord.gg/7QhMDfyPHR" class="fooder-twitter"
+            style="text-decoration:underline;color:#598eff;">Discord</a>
+        でご報告して頂ければ幸いです。
+        <span id="last-updated"></span>
+    </h2>
+    <div>
+        <ul class="monster_list">
+            <a href="./stages.html#goblin-forest">
+                <li class="dungeon">ゴブリンの森・呻男の遺跡</li>
+            </a>
+            <a href="#goblin">
+                <li>ゴブリン</li>
+            </a>
+            <a href="#goblin-mage">
+                <li>ゴブリンメイジ</li>
+            </a>
+            <a href="#ogre">
+                <li class="list-boss">[BOSS]オーガ</li>
+            </a>
+
+            <a href="./stages.html#romue-desert">
+                <li class="dungeon">ロームエ砂漠</li>
+            </a>
+            <a href="#saboteen">
+                <li>サボティーン</li>
+            </a>
+            <a href="#sasori">
+                <li>サソリ</li>
+            </a>
+
+            <a href="./stages.html#hyanold-pyramid">
+                <li class="dungeon">ヒャノルドのピラミッド</li>
+            </a>
+            <a href="#alvail">
+                <li class="list-boss">[BOSS]アルヴァイル</li>
+            </a>
+            <a href="#husk">
+                <li>干死ゾンビ</li>
+            </a>
+
+            <a href="./stages.html#domysaell-snowfield">
+                <li class="dungeon">ドミサエル降雪地帯</li>
+            </a>
+            <a href="#iceologer">
+                <li>アイスオロジャー</li>
+            </a>
+
+            <a href="./stages.html#nitro_honbu">
+                <li class="dungeon">Nitro本部</li>
+            </a>
+            <a href="#?">
+                <li>???</li>
+            </a>
+            <a href="#??">
+                <li>???</li>
+            </a>
+        </ul>
+        <br>
+        <h2 class="spoiler-alert" style="color:#b6fc7e;">❘ゴブリンの森・呻男の遺跡❘</h2>
+        <section id="GEN3987" class="section_eve">
+            <h3>&nbsp;[GEN3987]</h3>
+            <p class="desc">
+                和名:マクロピナシンシュツユムシ・バッハラフレシアモドキ<br>
+                英名:Macropinna rafflesia leach bach urechis unicinctus<br>
+                学名:<span class="italic">Vidaharresick Indra bach macnaraffleching urechisunicinctus<br></span>
+                ドメイン:幻核生物<br>
+                界:プロプスナトビビ界<br>
+                門:環形輪紋生物門<br>
+                亜門:超破綻生物亜門<br>
+                綱:単独立体綱<br>
+                目:準霊長目<br>
+                亜目:平鼻霊長亜目<br>
+                小目:無鼻小目<br>
+                科:幻ラフレシアモドキ科<br>
+                属:幻バッハラフレシアモドキ属<br>
+                亜属:橙幻ラフレシアモドキ亜属<br><br>
+                <span class="creator">
+                    デザイン:GEN3987<br>
+                    システム:不明
+                </span>
+            </p>
+            <p class="ecology">
+                GEN3987<br>
+                TwilightStarやGenServerを<br>
+                つくっているらしい。<br>
+                また、この生命体はいまだに一匹しか確認されていない。<br>
+                嫌がるものはりんりんであり、<br>
+                りんりんが近づくと"にげる"<br>
+                住んでいるところは、いまだにわかっていないが、<br>
+                気づくと後ろにいる場合があり<br>
+                平均寿命は<br>
+                31歳とされている。<br>
+            </p>
+            <img src="./assets/images/monsters/GEN3987.png" class="monster_img">
+        </section>
+        <section id="goblin" class="section_odd">
+            <h3>&nbsp;[ゴブリン]</h3>
+            <p class="desc">
+                和名:ミドリオウシュウコオニ<br>
+                英名:Goblin<br>
+                学名:<span class="italic">Lupites lupites<br></span>
+                ドメイン:真核生物<br>
+                界:動物界<br>
+                門:脊索動物門<br>
+                亜門:脊椎動物亜門<br>
+                上綱:四肢動物上綱<br>
+                綱:哺乳綱<br>
+                下綱:真獣下綱<br>
+                上目:真主齧上目<br>
+                大目:真主獣大目<br>
+                目:霊長目<br>
+                亜目:直鼻猿亜目<br>
+                下目:真猿型下目<br>
+                小目:長鼻小目<br>
+                科:コオニ科<br>
+                属:ゴブリン属<br><br>
+                <span class="creator">
+                    デザイン:れる<br>
+                    システム:れる
+                </span>
+            </p>
+            <p class="ecology">
+                基本的にどこにでもいる知的生命体。<br>
+                打製石器を中心とした武器を使い、<br>
+                かなり原始的な生物である。<br>
+                寿命は30年ほどで雑食性である。<br>
+                ヒトの生態系に侵入しいたずらを繰り返すため、<br>
+                ヒトに良く刈られるので数は減ってきている。<br>
+                しかし近頃はこのゴブリンの突然変異種である<br>
+                ゴブリンメイジによって住む場所を奪われ、<br>
+                絶滅危惧種に指定されかけている。<br>
+                また、常に半しゃがみ状態なので骨盤の形がヒトとは<br>
+                かなり違う他、耳たぶは発達しており<br>
+                3km先の音も聞こえるという。<br>
+            </p>
+            <img src="./assets/images/monsters/goblins.png" class="monster_img">
+        </section>
+        <section id="goblin-mage" class="section_eve">
+            <h3>&nbsp;[ゴブリンメイジ]</h3>
+            <p class="desc">
+                和名:ミドリオウシュウマジナイツカイコオニ<br>
+                英名:Goblin mage<br>
+                学名:<span class="italic">Lupites magrincelupites<br></span>
+                ドメイン:真核生物<br>
+                界:動物界<br>
+                門:脊索動物門<br>
+                亜門:脊椎動物亜門<br>
+                上綱:四肢動物上綱<br>
+                綱:哺乳綱<br>
+                下綱:真獣下綱<br>
+                上目:真主齧上目<br>
+                大目:真主獣大目<br>
+                目:霊長目<br>
+                亜目:直鼻猿亜目<br>
+                下目:真猿型下目<br>
+                小目:長鼻小目<br>
+                科:コオニ科<br>
+                属:ゴブリン属<br><br>
+                <span class="creator">
+                    デザイン:れる<br>
+                    システム:れる
+                </span>
+            </p>
+            <p class="ecology">
+                ゴブリンの突然変異種。<br>
+                棒の先に木の実を付けた杖で、<br>
+                炎系魔術を使う種族。<br>
+                なお、最近の研究でゴブリンと違い<br>
+                発汗しないことが分かっており、<br>
+                体温調節をどのように行っているかはわかっていない。<br>
+                めんどくさがりな性格で、わざわざヒトの居住区に<br>
+                侵入してまでしていたずらはしないが、<br>
+                森で遭遇すると徹底的に殺しにかかってくる。<br>
+                度々ゴブリンを仕留めるのも目撃されている。<br>
+                また、ゴブリンよりも鼻が優れていて<br>
+                これは主食であるキノコを毒キノコなのか<br>
+                判別出来る様にするためであると考えられている。
+            </p>
+            <img src="./assets/images/monsters/goblin_mages.png" class="monster_img">
+        </section>
+        <section id="ogre" class="section_boss">
+            <h3 class="boss_name">&nbsp;[Boss|オーガ]</h3>
+            <p class="boss_desc">
+                和名:ナンベイオオハイジン<br>
+                英名:Ogre zombie<br>
+                学名:<span class="italic">Dam dam immortui<br></span>
+                ドメイン:真核生物<br>
+                界:動物界<br>
+                門:脊索動物門<br>
+                亜門:脊椎動物亜門<br>
+                上綱:四肢動物上綱<br>
+                綱:哺乳綱<br>
+                下綱:真獣下綱<br>
+                上目:真主齧上目<br>
+                大目:真主獣大目<br>
+                目:霊長目<br>
+                亜目:直鼻猿亜目<br>
+                下目:真猿型下目<br>
+                小目:狭鼻小目<br>
+                科:ハイジン科<br>
+                亜科:ゾンビ亜科<br>
+                属:オーガ属<br><br>
+                <span class="creator">
+                    デザイン:れる<br>
+                    システム:れる
+                </span>
+            </p>
+            <p class="ecology">
+                知能の低い大型のゾンビ。<br>
+                寿命は25年程だがかなり大きく成長する。<br>
+                鼻は退化しており殆ど機能していない。<br>
+                巨大な棍棒を振り回し、<br>
+                爆風を起こしたり砂を巻き上げたりして攻撃する。<br>
+                足腰が前に突き出ているという異形なのは、<br>
+                移動よりも肩や腕などが発達した代償であり、<br>
+                そしてまだ進化の過程であると考えられる。<br>
+                また、集団行動を好まず、縄張りに侵入されると<br>
+                別の個体に攻撃を仕掛ける場合もある。<br>
+                絶滅危惧種でありながらヒトにとっては危険なので、<br>
+                少ない個体の一部は、ある地下遺跡に封印されているという。
+            </p>
+            <img src="./assets/images/monsters/ogre.png" class="monster_img">
+        </section>
+        <br>
+        <h2 class="spoiler-alert" style="color: #fcfa7d;">❘ロームエ砂漠❘</h2>
+        <section id="saboteen" class="section_eve">
+            <h3>&nbsp;[サボティーン]</h3>
+            <p class="desc">
+                和名:クロスジハシラキンシャチモドキ<br>
+                英名:Saboteen<br>
+                学名:<span class="italic">Sicutgrusonii columnigra</span><br>
+                ドメイン:真核生物<br>
+                界:半動半植物界(Animalia plantae)<br>
+                門:脊索植物門<br>
+                綱:柱形綱<br>
+                目:サボテンモドキ目<br>
+                科:サボテンモドキ科<br>
+                亜科:三腸性サボテンモドキ亜科<br>
+                属:キンシャチモドキ属<br><br>
+                <span class="creator">
+                    デザイン:れる<br>
+                    システム:れる
+                </span>
+            </p>
+            <p class="ecology">
+                サボテンに似た謎の多い生物。<br>
+                史上初めて半動半植物界に分類された生物である。<br>
+                光合成を続けながら自ら移動し、捕食を行う。<br>
+                何らかの手段で入手した水素の注入された<br>
+                ガス爆弾を発射し直撃後浮遊し落下で弱った獲物<br>
+                を生きたまま群れで食らいつく。<br>
+                繁殖をどのように行っているかは不明で、一部の学者には<br>
+                分裂による繁殖とも言われている。<br>
+                解剖する際も内部が空気に触れたとたん破裂し、<br>
+                水素に反応し大爆発するため詳細不明。<br>
+                半動半植物という未知の生物なので、<br>
+                分裂も有り得なくもない。
+            </p>
+            <img src="./assets/images/monsters/saboteen.png" class="monster_img">
+        </section>
+        <section id="sasori" class="section_odd">
+            <h3>&nbsp;[サソリ]</h3>
+            <p class="desc">
+                和名:ココガネサソリ<br>
+                英名:Newer sasori<br>
+                学名:<span class="italic">Pandinear warped retro</span><br>
+                ドメイン:真核生物<br>
+                界:動物界<br>
+                門:節足動物門<br>
+                綱:クモ綱<br>
+                目:サソリ目<br>
+                科:ココガネサソリ科<br>
+                属:コサソリ属<br><br>
+                <span class="creator">
+                    デザイン:GEN3987<br>
+                    システム:GEN3987
+                </span>
+            </p>
+            <p class="ecology">
+                かつてこの星にはサソリにもっと種類があったという。<br>
+                だが長い時を超えて生き残ったダイオウサソリが独自に進化し続け、<br>
+                このSasoriになった。しかし、このサソリの亜種(絶滅したはず)の<br>
+                「クロガネオオサソリ」の目撃情報が多数あり、<br>
+                高頻度でココガネサソリを生み落としていると証言する者もいる。<br>
+                なお、ココガネサソリの大量増殖が年に数回見られるので、<br>
+                クロガネオオサソリとの関連性については注目されている。
+            </p>
+            <img src="./assets/images/monsters/sasori.png" class="monster_img">
+        </section>
+        <br>
+        <h2 class="spoiler-alert" style="color: rgb(224, 194, 109);">❘ヒャノルドのピラミッド❘</h2>
+        <section id="alvail" class="section_boss">
+            <h3 class="boss_name">&nbsp;[Boss|アルヴァイル]</h3>
+            <p class="boss_desc">
+                和名:オオサボテンモドキ・ツチノエ<br>
+                英名:Alvail<br>
+                学名:<span class="italic">Val quatturiamalares</span><br>
+                ドメイン:真核生物<br>
+                界:半動半植物界(Animalia plantae)<br>
+                門:脊索植物門<br>
+                綱:柱形綱<br>
+                目:サボテンモドキ目<br>
+                科:古生ヴァル科<br>
+                属:ヴァル属<br><br>
+                <span class="creator">
+                    デザイン:Rinrin.rs(ネタバレ防止でモザイク処理済)<br>
+                    システム:GEN3987
+                </span>
+            </p>
+            <p class="ecology">
+                二千年前に絶滅したとされるヴァル属(ヴァル科も含む)の<br>
+                最後の生き残りの種。ヒャノルド公国にて凍結された個体とは別に。<br>
+                ピラミッドに幽閉されている個体があると伝承されているが、<br>
+                既に寿命で死滅しているだろう。<br>
+                攻撃手法は凝縮された胃液<br>
+                (厳密には瘴液であり瘴嚢にためられている)<br>
+                を飛ばしたり、噛みついたり干死ゾンビやサソリを召喚する。
+            </p>
+            <img src="./assets/images/monsters/alvail.png" class="monster_img">
+        </section>
+        <section id="husk" class="section_odd">
+            <h3>&nbsp;[干死ゾンビ]</h3>
+            <p class="desc">
+                和名:カンソウハイジン<br>
+                英名:Husk zombie<br>
+                学名:<span class="italic">Siccum siccum vas</span><br>
+                ドメイン:真核生物<br>
+                界:動物界<br>
+                門:脊索動物門<br>
+                亜門:脊椎動物亜門<br>
+                上綱:四肢動物上綱<br>
+                綱:哺乳綱<br>
+                下綱:真獣下綱<br>
+                上目:真主齧上目<br>
+                大目:真主獣大目<br>
+                目:霊長目<br>
+                亜目:直鼻猿亜目<br>
+                下目:真猿型下目<br>
+                小目:狭鼻小目<br>
+                科:ハイジン科<br>
+                亜科:ゾンビ亜科<br>
+                属:ハスク属<br><br>
+                <span class="creator">
+                    デザイン:MojangStudios<br>
+                    システム:MojangStudios
+                </span>
+            </p>
+            <p class="ecology">
+                干からびたゾンビ属。<br>
+                乾燥した地域に生息し、平均的なゾンビより少し巨大。<br>
+                極少量の水分のみで生存できるように進化しており、<br>
+                オアシスのない砂漠深部まで広く生息している。<br>
+                基本的に肉食だが、サボテンなどの植物も食べる場合がある。<br>
+                (水分を得るためとも言われている)<br>
+                また、日の光や熱に強くなっており、<br>
+                再生能力も他のゾンビ亜科の生物よりも高い他、<br>
+                寿命も300年強生きる個体もあると言う。<br>
+                しかしサソリヤドリ線虫の感染によって<br>
+                数が減っているという事実もある。
+            </p>
+            <img src="./assets/images/monsters/husk.png" class="monster_img">
+        </section>
+        <br>
+        <h2 class="spoiler-alert" style="color: #e8fdff;">❘ドミサエル降雪地帯❘</h2>
+        <section id="iceologer" class="section_odd">
+            <h3>&nbsp;[アイスオロジャー]</h3>
+            <p class="desc">
+                詳細不明
+            </p>
+            <p class="ecology"></p>
+            <img src="./assets/images/monsters/none.png" class="monster_img">
+        </section>
+    </div>
+    <div id=main></div>
+    <hr>
+    <footer>
+        <div class="site-license">
+            © 2020 - 2022
+            <a href="https://twitter.com/Rinrin_2nd" class="fooder-twitter" style="text-decoration:none;">Rinrin.rs</a>
+        </div>
+    </footer>
+    <a id="top_move">Top</a>
+</body>
+
+</html>

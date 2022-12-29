@@ -1,0 +1,240 @@
+@font-face {
+    font-family: "Kosugi";
+    src: url("../fonts/Kosugi/Kosugi-Regular.ttf");
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url(../images/background.png);
+    background-size: auto 100%;
+    font-family: "Kosugi";
+    color: #000000;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* ▼ Header */
+header {
+    background-image: url(../images/header.png);
+    background-size: 100% auto;
+    background-position: center center;
+    height: 200px;
+    border: 1px solid black;
+}
+
+header a {
+    display: inline-block;
+    margin: 20px;
+    box-shadow: 0 3px 16px #000000aa;
+    padding: 0px;
+}
+
+header a h2:hover:not(header ul a) {
+    width: 130px;
+    height: 130px;
+    filter: sepia();
+}
+
+header a h2 {
+    transition: .3s;
+    width: 110px;
+    height: 110px;
+    color: white;
+}
+
+header ul a h2:hover {
+    border: white solid 3px;
+    border-radius: 5px;
+    padding: 6px;
+    background-color: #00000038;
+    height: 90px;
+    width: 110px;
+    filter: invert(100%);
+    transform: translateY(-30px);
+}
+
+header>a {
+    width: 110px;
+    height: 110px;
+}
+
+header a img {
+    transition: .2s ease-out;
+    width: 110px;
+    height: 110px;
+}
+
+header a img:hover {
+    filter: sepia(30%);
+    transform: scale(1.08);
+}
+
+header ul a img {
+    height: 55px;
+    width: auto;
+}
+
+header ul {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+header ul a {
+    box-shadow: initial;
+    float: right;
+}
+
+header li {
+    float: right;
+    margin: 33px 20px;
+    list-style: none;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* ▲ Header */
+
+/* ▼ Main */
+#main {
+    background-image: url(../images/items.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-size: 2300px;
+    font-size: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+#main h1 {
+    background: #464646;
+    color: white;
+    text-shadow: 5px 5px 10px black;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+body h1 a {
+    color: #160052;
+    text-shadow: 5px 5px 10px #a1e1ff;
+    font-size: 50px;
+}
+
+h1 {
+    font-weight: 100;
+    background: #464646;
+    color: white;
+    text-shadow: 5px 5px 10px black;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 64px;
+}
+
+#main a {
+    display: inline-flex;
+    margin: 5px 8px;
+    box-shadow: 0 0 10px black;
+    transition: .2s;
+}
+
+#main a:hover {
+    box-shadow: 0 0 64px black;
+    filter: sepia(20%);
+    transform: scale(1.01);
+}
+
+#main a:active {
+    transform: none;
+}
+
+#main img {
+    width: 500px;
+    box-shadow: black;
+}
+
+/* ▲ Main */
+
+/* ▼ Footer */
+footer {
+    background-color: #474747;
+    height: 200px;
+    padding: 40px;
+}
+
+footer li {
+    float: left;
+    margin: 33px 20px;
+    list-style: none;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+footer img {
+    height: 55px;
+}
+
+.site-license {
+    color: #ffffff;
+    font-size: 20px;
+    padding: 30px 20px;
+    float: right;
+}
+
+.site-license a {
+    color: #d4f9ff;
+}
+
+/* ▲ Footer */
+
+/* ▼ Jump to top button */
+#top_move {
+    font-size: 26px;
+    cursor: pointer;
+    display: inline;
+    padding: 0.65em 0.5em;
+    text-decoration: none;
+    background: #57db99;
+    color: #032514;
+    border-bottom: solid 5px #053a1f;
+    border-radius: 10px;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    font-weight: bold;
+    user-select: none;
+    transition: 0s 0.1s ease-out;
+}
+
+#top_move:active {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    box-shadow: 0px 0px 1px #00000033;
+    border-bottom: none;
+}
+
+/* ▲ Jump to top button */
+
+.spoiler-alert {
+    font-weight: 100;
+    font-size: 30px;
+    background: #3b3b3b;
+    color: rgb(255, 193, 193);
+    text-shadow: 5px 5px 10px black;
+    padding: 10px;
+    margin: 20px;
+}
