@@ -20,7 +20,7 @@ $(function () {
         <img src="./assets/images/faq_thumbnail.png">
     </div></a>
     `;
-    const LAST_UPDATED = "<br><br><span style=\"color:#d0eaff;\">最終更新日: 2022/12/29</span>";
+    const LAST_UPDATED = "<br><br><span style=\"color:#d0eaff;\">最終更新日: 2023/12/27</span>";
 
     $("#main").append(ARTICLES);
     $("#last-updated").append(LAST_UPDATED);
